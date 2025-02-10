@@ -9,12 +9,16 @@
 
   <body>
     <h1>Country Info</h1>
+    <label for="search">Search for a country:</label>
     <input type="text" id="search" placeholder="Enter country name" />
-    <button id="searchBtn">Search</button>
-    <div id="results"></div>
+    <button id="searchBtn" type="button">Search</button>
+    <div id="results" aria-live="polite"></div>
     <script src="script.js"></script>
+    <footer>
+      Data provided by
+      <a href="https://restcountries.com/" target="_blank"
+        >REST Countries API</a
+      >
+    </footer>
   </body>
-  <footer>
-    Data provided by <a href="https://restcountries.com/" target="_blank">REST Countries API</a>.
-</footer>
 </html>
