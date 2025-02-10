@@ -40,7 +40,6 @@ body {
 
 #results {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;
@@ -59,7 +58,7 @@ body {
 }
 
 .flag {
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
 }
 
