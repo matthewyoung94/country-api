@@ -1,8 +1,10 @@
+// adding an event listener to the search button and getting user's input
 document.getElementById("searchBtn").addEventListener("click", function () {
   const countryName = document.getElementById("search").value.trim();
 
+  // if no entry, alert
   if (!countryName) {
-    alert("Please enter a country name");
+    alert("Please enter a valid country");
     return;
   }
 
