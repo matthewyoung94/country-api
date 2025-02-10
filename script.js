@@ -24,18 +24,37 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 });
 
 function displayCountry(country) {
-  document.getElementById("results").innerHTML = `
-        <h2>${country.name.common}</h2>
-        <img src="${country.flags.png}" alt="Flag of ${
-    country.name.common
-  }" class="flag">
-        <p><strong>Capital:</strong> ${
-          country.capital ? country.capital[0] : "N/A"
-        }</p>
-        <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
-        <p><strong>Region:</strong> ${country.region}</p>
-        <p><strong>Languages:</strong> ${Object.values(country.languages).join(
-          ", "
-        )}</p>
-    `;
+  const resultsContainer = document.getElementById("results");
+
+  resultsContainer.textContent = "";
+  const countryName = document.createElement("h2");
+  countryName.textContent = country.name.common;
+
+  const flag = document.createElement("img");
+  flag.src = country.flags.png;
+  flag.alt = `Flag of ${country.name.common}`;
+  flag.classList.add("flag");
+
+  const capital = document.createElement("p");
+  capital.innerHTML = `<strong>Capital:</strong> ${
+    country.capital ? country.capital[0] : "N/A"
+  }`;
+
+  const population = document.createElement("p");
+  population.innerHTML = `<strong>Population:</strong> ${country.population.toLocaleString()}`;
+
+  const region = document.createElement("p");
+  region.innerHTML = `<strong>Region:</strong> ${country.region}`;
+
+  const languages = document.createElement("p");
+  languages.innerHTML = `<strong>Languages:</strong> ${Object.values(
+    country.languages
+  ).join(", ")}`;
+
+  resultsContainer.appendChild(countryName);
+  resultsContainer.appendChild(flag);
+  resultsContainer.appendChild(capital);
+  resultsContainer.appendChild(population);
+  resultsContainer.appendChild(region);
+  resultsContainer.appendChild(languages);
 }
